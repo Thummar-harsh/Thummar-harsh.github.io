@@ -483,7 +483,7 @@
 
 				<div class="col-md-8">
 					<!-- Contact Form -->
-					<form id="contact-form" class="contact-form mt-6" method="post" action="form/contact.php">
+					<form id="contact-form" class="contact-form mt-6" method="post" action="">
 						
 						<div class="messages"></div>
 						
@@ -521,7 +521,7 @@
 							</div>
 						</div>
 
-						<button type="submit" name="submit" id="submit" value="Submit" class="btn btn-default">Send Message</button><!-- Send Button -->
+						<button type="submit" name="submit" id="submit" value="Submit" class="btn btn-default" onclick="sendEmail()">Send Message</button><!-- Send Button -->
 
 					</form>
 					<!-- Contact Form end -->
@@ -541,6 +541,25 @@
 <a href="javascript:" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
 
 <!-- SCRIPTS -->
+<script>
+function sendEmail() {
+    var name = document.getElementById('InputName').value;
+    var email = document.getElementById('InputEmail').value;
+    var subject = document.getElementById('InputSubject').value;
+    var message = document.getElementById('InputMessage').value;
+
+    var mailtoLink = 'mailto:thummarharsh07@gmail.com' +
+                    '?subject=' + encodeURIComponent(subject) +
+                    '&body=' + encodeURIComponent('Name: ' + name + '\n' +
+                                                   'Email: ' + email + '\n' +
+                                                   'Subject: ' + subject + '\n' +
+                                                   'Message: ' + message);
+
+    window.location.href = mailtoLink;
+}
+</script>
+
+
 <script src="js/jquery-1.12.3.min.js"></script>
 <!--start download btn-->
 
