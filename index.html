@@ -105,7 +105,7 @@
 		</div>
 		<!-- logo image -->
 		<div class="site-logo">
-			<a href="https://harsh.com/category/solo">
+			<a href="https://github.com/Thummar-harsh">
 				<img src="images/logo.png" alt="harsh" />
 			</a>
 		</div>
@@ -117,7 +117,7 @@
 	
 	<!-- logo image -->
 	<div class="site-logo">
-		<a href="https://harsh.com/category/solo">
+		<a href="https://github.com/Thummar-harsh">
 			<img src="images/logo.png" alt="harsh" />
 		</a>
 	</div>
@@ -541,21 +541,46 @@
 <a href="javascript:" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
 
 <!-- SCRIPTS -->
+<script
+type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+></script>
+<script type="text/javascript">
+(function () {
+  emailjs.init("ktPcmGaQGWUSXmv6o");
+})();
+</script>
 <script>
-function sendEmail() {
-    var name = document.getElementById('InputName').value;
-    var email = document.getElementById('InputEmail').value;
-    var subject = document.getElementById('InputSubject').value;
-    var message = document.getElementById('InputMessage').value;
+	function sendEmail() {
+    // var name = document.getElementById('InputName').value;
+    // var email = document.getElementById('InputEmail').value;
+    // var subject = document.getElementById('InputSubject').value;
+    // var message = document.getElementById('InputMessage').value;
 
-    var mailtoLink = 'mailto:thummarharsh07@gmail.com' +
-                    '?subject=' + encodeURIComponent(subject) +
-                    '&body=' + encodeURIComponent('Name: ' + name + '\n' +
-                                                   'Email: ' + email + '\n' +
-                                                   'Subject: ' + subject + '\n' +
-                                                   'Message: ' + message);
+	alert("Your message will be sending!!")
 
-    window.location.href = mailtoLink;
+
+	var params = {
+	name: document.getElementById("InputName").value,
+	subject: document.getElementById("InputSubject").value,
+	email: document.getElementById("InputEmail").value,
+	message: document.getElementById("InputMessage").value,
+	};
+
+	const serviceID = "service_ndwc4yi";
+	const templateID = "template_fyuhbb4";
+
+	emailjs.send(serviceID, templateID, params)
+	.then(res=>{
+		document.getElementById("InputName").value = "";
+		document.getElementById("InputEmail").value = "";
+		document.getElementById("InputSubject").value = "";
+		document.getElementById("InputMessage").value = "";
+		console.log(res);
+		alert("Your message sent successfully!!")
+
+	})
+	.catch(err=>console.log(err));
 }
 </script>
 
