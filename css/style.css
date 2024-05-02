@@ -2439,3 +2439,21 @@ body {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+
+
+/* Additional custom styles */
+.portfolio-filter-mobile {
+  padding: 5px;
+  border: 1px solid #454360;
+  border-radius: 0.5rem;
+  background-color: #f8f9fa;
+  color: #495057;
+  width: 100%;
+  max-width: 350px; /* Optional: Limit the maximum width */
+}
+
+div.pf-filter-wrapper::after {
+  content: none; /* Removes the content of the :after pseudo-element */
+}
