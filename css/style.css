@@ -2457,3 +2457,52 @@ body {
 div.pf-filter-wrapper::after {
   content: none; /* Removes the content of the :after pseudo-element */
 }
+
+
+
+
+
+
+
+.slider {
+  width: 100%;
+  max-width: 1000px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+
+
+@keyframes slide {
+  0%, 10%  { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+}
+
+.slides {
+  animation: slide 20s infinite;
+}
+
+
+
+
+.image-view {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-view img {
+  width: 30%;
+  height: auto;
+  border-radius: 4px;
+}
